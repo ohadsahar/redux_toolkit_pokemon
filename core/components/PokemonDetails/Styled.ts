@@ -35,8 +35,8 @@ export const PokemonCardImage = styled.img`
   width: 350px;
   height: 350px;
   @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
   }
 `;
 
