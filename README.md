@@ -23,6 +23,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## App example
 
-![Screenshot](public/static/images/1.png)
+Favorites
+
 ![Screenshot](public/static/images/2.png)
+
+All
+
+![Screenshot](public/static/images/1.png)
+
+Searched pokemons
+
 ![Screenshot](public/static/images/3.png)
