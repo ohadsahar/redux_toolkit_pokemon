@@ -7,13 +7,14 @@ import {
   PokemonWrapper,
 } from '@/core/components/PokemonList/Styled';
 import Tabs from '@/core/components/Tabs/Tabs';
+import { PokemonFavoriteListWrapper } from './Styled';
 
 const PokemonFavoriteList = () => {
   const { favoritesPokemons, handleSelectedPokemon, handleFavoritePokemon } =
     usePokemons();
 
   return (
-    <>
+    <PokemonFavoriteListWrapper>
       <Tabs />
       <LayoutWrapper>
         <PokemonListWrapper>
@@ -28,7 +29,7 @@ const PokemonFavoriteList = () => {
           ))}
         </PokemonListWrapper>
       </LayoutWrapper>
-    </>
+    </PokemonFavoriteListWrapper>
   );
 };
 
