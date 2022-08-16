@@ -7,7 +7,6 @@ import { FaHeart, FaFilter } from 'react-icons/fa';
 
 const Tabs = () => {
   const { handleNavigate, getCurrentSelectedTab } = useTabs();
-  console.log(getCurrentSelectedTab());
 
   return (
     <TabsWrapper>

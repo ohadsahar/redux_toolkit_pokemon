@@ -21,10 +21,10 @@ const PokemonDetails = () => {
     pokemon.types && (
       <PokemonDetailsWrapper bgColor={types[pokemon.types[0].type.name]}>
         <PokemonDetailsNavbar>
+          <RegularText>{pokemon?.name}</RegularText>
           <GoBackActionWrapper onClick={goBack}>
             <RegularText>Go Back</RegularText>
           </GoBackActionWrapper>
-          <RegularText>{pokemon?.name}</RegularText>
         </PokemonDetailsNavbar>
         <PokemonCardImageWrapper>
           <PokemonCardImage src={pokemon.sprites.front_default} />

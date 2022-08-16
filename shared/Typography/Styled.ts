@@ -10,6 +10,9 @@ export const HintText = styled.p<TypographyProps>`
   color: ${(props: TypographyProps) => props.color ?? 'white'};
   text-align: ${(props: TypographyProps) => props.textAlign ?? 'left'};
   font-weight: 400;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const RegularText = styled.p<TypographyProps>`
@@ -18,4 +21,8 @@ export const RegularText = styled.p<TypographyProps>`
   color: ${(props: TypographyProps) => props.color ?? 'white'};
   font-weight: 500;
   text-align: ${(props: TypographyProps) => props.textAlign ?? 'left'};
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;

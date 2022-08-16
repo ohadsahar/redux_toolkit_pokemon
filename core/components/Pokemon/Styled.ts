@@ -6,6 +6,7 @@ export const PokemonItemWrapper = styled.div`
   padding: 2.5vw;
   border: 2px solid white;
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const PokemonImage = styled.img`
