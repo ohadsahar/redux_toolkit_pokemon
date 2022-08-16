@@ -23,11 +23,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## App example
 
-Favorites
+All
 
 ![Screenshot](public/static/images/2.png)
 
-All
+Favorites
 
 ![Screenshot](public/static/images/1.png)
 
