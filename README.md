@@ -23,6 +23,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## App example
 
-![Screenshot](public/static/images/app_example_images/1.png)
-![Screenshot](public/static/images/app_example_images/2.png)
-![Screenshot](public/static/images/app_example_images/3.png)
+![Screenshot](public/static/images/1.png)
+![Screenshot](public/static/images/2.png)
+![Screenshot](public/static/images/3.png)
