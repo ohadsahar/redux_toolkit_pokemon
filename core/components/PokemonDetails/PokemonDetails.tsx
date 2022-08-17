@@ -30,10 +30,7 @@ const PokemonDetails = () => {
           <PokemonCardImage src={pokemon.sprites.front_default} />
         </PokemonCardImageWrapper>
         <PokemonDetailsData>
-          <Typography
-            type={TextType.REGULAR}
-            text={`Power: ${pokemon?.base_experience}`}
-          />
+          <Typography type={TextType.REGULAR} text={`Power: ${pokemon?.base_experience}`} />
           <PokemonDetailsStatsList stats={pokemon.stats} />
           <PokemonDetailsTypesList types={pokemon.types} />
         </PokemonDetailsData>

@@ -14,8 +14,7 @@ export const TabWrapper = styled.div<TabProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props: TabProps) =>
-    props.selected ? '#0098ff ' : 'white'};
+  background-color: ${(props: TabProps) => (props.selected ? '#0098ff ' : 'white')};
   width: 50%;
   height: 100%;
   grid-column-gap: 1vw;

@@ -10,17 +10,11 @@ const Tabs = () => {
 
   return (
     <TabsWrapper>
-      <TabWrapper
-        onClick={() => handleNavigate('/')}
-        selected={getCurrentSelectedTab() !== '/favorites'}
-      >
+      <TabWrapper onClick={() => handleNavigate('/')} selected={getCurrentSelectedTab() !== '/favorites'}>
         <FaFilter color="black" fontSize={'24px'} />
         <Typography text={'All'} type={TextType.HINT} color="black" />
       </TabWrapper>
-      <TabWrapper
-        onClick={() => handleNavigate('/favorites')}
-        selected={getCurrentSelectedTab() === '/favorites'}
-      >
+      <TabWrapper onClick={() => handleNavigate('/favorites')} selected={getCurrentSelectedTab() === '/favorites'}>
         <FaHeart color="red" fontSize={'24px'} />
         <Typography text={'Favorites'} type={TextType.HINT} color="black" />
       </TabWrapper>

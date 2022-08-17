@@ -9,12 +9,7 @@ const PokemonDetailsTypesList = ({ types }: PokemonTypesArr) => {
       <Typography type={TextType.REGULAR} text="Types" />
       <PokemonStatsList>
         {types.map((pokemonType: PokemonType, index: number) => (
-          <Typography
-            key={index}
-            textAlign="left"
-            type={TextType.HINT}
-            text={pokemonType.type.name}
-          />
+          <Typography key={index} textAlign="left" type={TextType.HINT} text={pokemonType.type.name} />
         ))}
       </PokemonStatsList>
     </>
