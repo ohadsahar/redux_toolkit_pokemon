@@ -1,3 +1,4 @@
+import { FavoritePokemonProps } from 'models/FavoritePokemonProps';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect } from 'react';
 import {
@@ -35,7 +36,7 @@ export const usePokemons = () => {
 
   const handleFavoritePokemon = useCallback(
     (name: string, imageUrl: string) => {
-      const pokemonData: any = { name, imageUrl };
+      const pokemonData: FavoritePokemonProps = { name, imageUrl };
       dispatch(handleFavoritePoke(pokemonData));
     },
     [dispatch]

@@ -2,10 +2,20 @@ import { API_URL } from '@/config/Config';
 import { FavoritePokemonsStorageKey } from '@/config/ConstKeys';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { FavoritePokemonProps } from 'models/FavoritePokemonProps';
 import { PokemonProps } from 'models/PokemonProps';
-import { InitialState, initialState } from 'models/StoreProps';
+import { InitialState } from 'models/StoreProps';
 import { RootState } from 'redux/store';
 import { LocalStorageService } from 'services/LocalStorage.service';
+
+export const initialState: InitialState = {
+  initialPokemons: [],
+  pokemons: [],
+  favoritePokemons: [],
+  singlePokemon: { name: '', url: '', sprites: { back_default: '' } },
+  loading: false,
+  error: '',
+};
 
 export const fetchPokemons = createAsyncThunk(
   'pokemons/fetchPokemons',
@@ -59,7 +69,10 @@ const pokemonSlice = createSlice({
       );
       state.pokemons = filteredPokemons;
     },
-    handleFavoritePoke: (state: InitialState, action: PayloadAction<any>) => {
+    handleFavoritePoke: (
+      state: InitialState,
+      action: PayloadAction<FavoritePokemonProps>
+    ) => {
       const favoritePokemons =
         LocalStorageService.getNameByKey(FavoritePokemonsStorageKey) ?? [];
       const favoritePokemonIndex = favoritePokemons?.findIndex(
@@ -93,16 +106,19 @@ const pokemonSlice = createSlice({
     builder.addCase(fetchPokemons.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(fetchPokemons.fulfilled, (state, action: any) => {
+    builder.addCase(
+      fetchPokemons.fulfilled,
+      (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.pokemons = action.payload;
+        state.initialPokemons = action.payload;
+        state.favoritePokemons =
+          LocalStorageService.getNameByKey(FavoritePokemonsStorageKey) ?? [];
+      }
+    );
+    builder.addCase(fetchPokemons.rejected, (state) => {
       state.loading = false;
-      state.pokemons = action.payload;
-      state.initialPokemons = action.payload;
-      state.favoritePokemons =
-        LocalStorageService.getNameByKey(FavoritePokemonsStorageKey) ?? [];
-    });
-    builder.addCase(fetchPokemons.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+      state.error = 'Something happend when fetching pokemons';
     });
     builder.addCase(fetchSinglePokemon.pending, (state) => {
       state.loading = true;
@@ -111,9 +127,9 @@ const pokemonSlice = createSlice({
       state.loading = false;
       state.singlePokemon = action.payload;
     });
-    builder.addCase(fetchSinglePokemon.rejected, (state, action) => {
+    builder.addCase(fetchSinglePokemon.rejected, (state) => {
       state.loading = false;
-      state.error = action.payload;
+      state.error = 'Something happend when fetching your pokemon';
     });
   },
 });

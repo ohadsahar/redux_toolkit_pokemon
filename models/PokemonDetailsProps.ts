@@ -1,4 +1,4 @@
-export const types: any = {
+export const types: Record<string, string> = {
   grass: '#537A5A',
   bug: '#F4D06F',
   fire: '#F02D3A',

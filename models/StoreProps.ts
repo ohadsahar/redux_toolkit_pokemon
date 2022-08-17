@@ -3,17 +3,8 @@ import { PokemonProps } from './PokemonProps';
 export interface InitialState {
   initialPokemons: PokemonProps[];
   pokemons: PokemonProps[];
-  favoritePokemons: any[];
-  singlePokemon: any;
+  favoritePokemons: PokemonProps[];
+  singlePokemon: PokemonProps;
   loading: boolean;
-  error: any;
+  error: string;
 }
-
-export const initialState: InitialState = {
-  initialPokemons: [],
-  pokemons: [],
-  favoritePokemons: [],
-  singlePokemon: {},
-  loading: false,
-  error: null,
-};
