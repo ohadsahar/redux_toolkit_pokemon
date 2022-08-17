@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback } from 'react';
 import { searchPokemons } from 'redux/features/pokemonSlice';
 import { useAppDispatch } from 'redux/store';
 
