@@ -2,13 +2,12 @@ import { FavoritePokemonProps } from 'models/FavoritePokemonProps';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect } from 'react';
 import {
-  fetchPokemons,
-  fetchSinglePokemon,
   handleFavoritePoke,
   selectAllFavoritesPokemons,
   selectAllPokemons,
   selectSinglePokemon,
 } from 'redux/features/pokemonSlice';
+import { fetchPokemons, fetchSinglePokemon } from 'redux/features/pokemonSliceFunctions';
 import { useAppDispatch, useAppSelector } from 'redux/store';
 
 export const usePokemons = () => {
